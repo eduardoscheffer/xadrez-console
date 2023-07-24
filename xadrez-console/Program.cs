@@ -1,5 +1,5 @@
 ﻿namespace xadrez_console;
-internal class Program
+class Program
 {
     static void Main(string[] args)
     {
