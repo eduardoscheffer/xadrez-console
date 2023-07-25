@@ -1,10 +1,12 @@
-﻿namespace xadrez_console;
+﻿using tabuleiro;
+
+namespace xadrez_console;
 class Program
 {
     static void Main(string[] args)
     {
-        Console.ForegroundColor = ConsoleColor.DarkBlue;
-        Console.WriteLine("Hello, World!");
-        Console.ResetColor();
+        _ = new Tabuleiro(8, 8);
+
+        Console.WriteLine();
     }
 }
