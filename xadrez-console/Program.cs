@@ -5,7 +5,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        _ = new Tabuleiro(8, 8);
+        Tabuleiro tab = new Tabuleiro(8, 8);
+        Tela.imprimirTabuleiro(tab);
 
         Console.WriteLine();
     }
