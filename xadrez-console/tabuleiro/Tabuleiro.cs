@@ -38,6 +38,22 @@ internal class Tabuleiro
         peca.posicao = posicao;
     }
 
+    // metodo pra retirar uma peca do tabuleiro:
+    public Peca retirarPeca(Posicao pos)
+    {
+        if (peca(pos) != null)
+        {
+            Peca aux = peca(pos);
+            aux.posicao = null;
+            pecas[pos.linha, pos.coluna] = null;
+            return aux;
+
+        }
+        else
+            return null;
+
+    }
+
     // metodo que checa se uma posicao é valida no tabuleiro:
     public bool posicaoValida (Posicao pos) => (pos.linha < 0 || pos.linha > linhas || pos.coluna < 0 || pos.coluna > colunas) ? false : true;
 
