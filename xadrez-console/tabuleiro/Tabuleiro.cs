@@ -35,7 +35,7 @@ internal class Tabuleiro
             throw new TabuleiroException("Já existe uma peça nessa posição!");
         // vai na matriz do campo pecas e coloca um objeto do tipo Peca:
         pecas[posicao.linha, posicao.coluna] = peca;
-        peca.posicao = posicao;
+        peca.posicao = posicao; // atualiza a propriedade posicao da peça
     }
 
     // metodo pra retirar uma peca do tabuleiro:

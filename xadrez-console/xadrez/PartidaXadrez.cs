@@ -6,12 +6,14 @@ internal class PartidaXadrez
     public Tabuleiro tab { get; private set; }
     private int turno { get; set; }
     private Cor jogadorAtual { get; set; }
+    public bool terminada { get; private set; }
 
     public PartidaXadrez()
     {
         tab = new Tabuleiro(8, 8);
         turno = 1;
         jogadorAtual = Cor.Branca;
+        terminada = false;
         colocarPecas();
     }
 

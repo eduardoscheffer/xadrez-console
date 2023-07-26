@@ -12,8 +12,6 @@ internal class PosicaoXadrez
         this.linha = linha;
     }
 
-
-
     // metodo que transforma a posicao do xadrez pra posicao do tabuleiro(matriz):
     public Posicao toPosicao() => new(8 - linha, coluna - 'a');
 
