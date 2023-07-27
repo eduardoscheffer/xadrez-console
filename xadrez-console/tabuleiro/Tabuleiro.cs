@@ -16,22 +16,24 @@ internal class Tabuleiro
     }
     
     // metodo de Peca que retorna uma Peca do tabuleiro, ja que a propriedade eh private:
-    public Peca peca(int linha, int coluna) => pecas[linha, coluna];
+    public Peca Peca(int linha, int coluna) => pecas[linha, coluna];
 
     // sobecarga do metodo peca:
-    public Peca peca(Posicao pos) => pecas[pos.linha, pos.coluna];
-
-    // metodo que checa se existe uma peça em uma determinada posicao:
-    public bool existePeca(Posicao pos)
+    public Peca Peca(Posicao pos)
     {
-        validarPosicao(pos); // primeiro faz a validação da posicao
-        return peca(pos) != null;
+        return pecas[pos.linha, pos.coluna];
+    }
+    // metodo que checa se existe uma peça em uma determinada posicao:
+    public bool ExistePeca(Posicao pos)
+    {
+        ValidarPosicao(pos); // primeiro faz a validação da posicao
+        return Peca(pos) != null;
     }
 
     // metodo que adiciona uma peca ao tabuleiro
-    public void colocarPeca (Peca peca, Posicao posicao)
+    public void ColocarPeca(Peca peca, Posicao posicao)
     {
-        if (existePeca(posicao))
+        if (ExistePeca(posicao))
             throw new TabuleiroException("Já existe uma peça nessa posição!");
         // vai na matriz do campo pecas e coloca um objeto do tipo Peca:
         pecas[posicao.linha, posicao.coluna] = peca;
@@ -39,11 +41,11 @@ internal class Tabuleiro
     }
 
     // metodo pra retirar uma peca do tabuleiro:
-    public Peca retirarPeca(Posicao pos)
+    public Peca RetirarPeca(Posicao pos)
     {
-        if (peca(pos) != null)
+        if (Peca(pos) != null)
         {
-            Peca aux = peca(pos);
+            Peca aux = Peca(pos);
             aux.posicao = null;
             pecas[pos.linha, pos.coluna] = null;
             return aux;
@@ -55,11 +57,11 @@ internal class Tabuleiro
     }
 
     // metodo que checa se uma posicao é valida no tabuleiro:
-    public bool posicaoValida (Posicao pos) => (pos.linha < 0 || pos.linha > linhas || pos.coluna < 0 || pos.coluna > colunas) ? false : true;
+    public bool PosicaoValida(Posicao pos) => (pos.linha < 0 || pos.linha >= linhas || pos.coluna < 0 || pos.coluna >= colunas) ? false : true;
 
-    public void validarPosicao (Posicao pos)
+    public void ValidarPosicao(Posicao pos)
     {
-        if (!posicaoValida(pos))
+        if (!PosicaoValida(pos))
             throw new TabuleiroException("Posicao Invalida!");
     }
 
