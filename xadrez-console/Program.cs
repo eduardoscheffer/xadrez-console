@@ -40,6 +40,8 @@ class Program
                     Console.ReadLine();
                 }
             }
+            Console.WriteLine();
+            Tela.ImprimirPartida(partida);
         }
         catch (TabuleiroException e)
         {
